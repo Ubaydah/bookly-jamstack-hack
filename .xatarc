@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Ubaydah-s-workspace-qb9vvt.us-east-1.xata.sh/db/bookly",
+  "codegen": {
+    "output": "utils/xata.ts"
+  }
+}
