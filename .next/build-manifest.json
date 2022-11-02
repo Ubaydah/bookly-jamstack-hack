@@ -20,6 +20,16 @@
       "static/chunks/main.js",
       "static/chunks/pages/index.js"
     ],
+    "/LoginUserForm": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/LoginUserForm.js"
+    ],
+    "/RegisterUserForm": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/RegisterUserForm.js"
+    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

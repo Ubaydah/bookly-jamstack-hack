@@ -4,7 +4,8 @@ import { getXataClient } from "../../../utils/xata";
 
 
 const handler: NextApiHandler = async (req, res) => {
-    const { title, author, year_published, genre, image } = req.body;
+    const { title, author, year_published, genre } = req.body;
+    const image = req.file.path
     const xata = getXataClient();
     const result = cloudinary.uploader.upload(image)
     // const user = await xata.db.User.filter({ email }).getFirst()
