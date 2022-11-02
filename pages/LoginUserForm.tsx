@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import {Box, Heading, Text, FormControl, FormLabel, Input, Button, useToast} from '@chakra-ui/react'
+import Link from 'next/link';
 
 const LoginUserForm = () => {
     const [email, setEmail] = useState("");
@@ -28,7 +29,7 @@ const LoginUserForm = () => {
             title: 'Error!',
             description: "Please fill all fields correctly",
             status: 'error',
-            duration: 3000,
+            duration: 1000,
             isClosable: true,
             variant: 'left-accent',
             position: 'top',
@@ -39,7 +40,7 @@ const LoginUserForm = () => {
 
     return (
         <Box maxW={'400px'} mx='auto' textAlign={'center'} mt='10%' padding={{base: '15px'}}>
-            <Heading size='md' mb='5'>Login to Bookly</Heading>
+            <Heading size='lg' mb='7'>Login to Bookly</Heading>
             <FormControl isRequired>
                <Box mb='3'>
                  <FormLabel>Email</FormLabel>
@@ -50,34 +51,10 @@ const LoginUserForm = () => {
                  <Input type='password' variant={'flushed'} value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Input your password' />
                </Box>
 
-               <Button colorScheme={'teal'} type='submit' mt='4' onClick={handleSubmit}>Login</Button>
+               <Button colorScheme={'teal'} type='submit' mt='4' mb='4' onClick={handleSubmit}>Login</Button>
             </FormControl>
+            <Text display={'flex'} gap='3px' justifyContent={'center'}>Don't have an account? <Link href='/RegisterUserForm'><Text color={'#4ae'}> Create Account</Text></Link> </Text>
         </Box>
-        
-        // <form
-        //     onSubmit={(e) => {
-        //         e.preventDefault();
-        //         send();
-        //     }}
-        //     style={{ display: "flex", gap: 8 }}
-        // >
-        //     <label>
-        //         Login:
-        //         <input
-        //             value={email}
-        //             onChange={(e) => setEmail(e.target.value)}
-        //             type="text"
-        //             placeholder="Enter your email"
-        //         />
-        //         <input
-        //             value={password}
-        //             onChange={(e) => setPassword(e.target.value)}
-        //             type="text"
-        //             placeholder="Enter your password"
-        //         />
-        //     </label>
-        //     <button>Save</button>
-        // </form>
     );
 };
 
