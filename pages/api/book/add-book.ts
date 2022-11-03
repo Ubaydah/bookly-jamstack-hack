@@ -1,13 +1,10 @@
 import { NextApiHandler } from "next";
-import cloudinary from "../../../utils/cloudinary";
 import { getXataClient } from "../../../utils/xata";
 
 
 const handler: NextApiHandler = async (req, res) => {
-    const { title, author, year_published, genre } = req.body;
-    const image = req.file.path
+    const { title, author, year_published, genre, image_url } = req.body;
     const xata = getXataClient();
-    const result = cloudinary.uploader.upload(image)
     // const user = await xata.db.User.filter({ email }).getFirst()
     // // user doesn't exist
     // if (!user) {
@@ -26,7 +23,7 @@ const handler: NextApiHandler = async (req, res) => {
         author: author,
         year_published: year_published,
         genre: genre,
-        image_url: (await result).secure_url
+        image_url: image_url
 
     })
 
