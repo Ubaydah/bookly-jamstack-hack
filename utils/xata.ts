@@ -22,6 +22,7 @@ const tables = [
       { name: "document_url", type: "string" },
       { name: "uploadDate", type: "string" },
       { name: "fileSize", type: "string" },
+      { name: "uploadedBy", type: "string" },
     ],
   },
 ] as const;

@@ -25,16 +25,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/book": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/book.js"
-    ],
-    "/book/[id]": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/book/[id].js"
-    ],
     "/gallery": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

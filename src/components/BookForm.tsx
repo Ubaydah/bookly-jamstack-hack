@@ -23,6 +23,7 @@ const initialBookValues: Partial<Book> = {
   genre: "",
   yearPublished: null,
   document_url: "",
+  uploadedBy: "",
 };
 
 const BookForm = ({ isEdit, data }: { isEdit?: boolean; data?: any }) => {
@@ -50,7 +51,8 @@ const BookForm = ({ isEdit, data }: { isEdit?: boolean; data?: any }) => {
           ...values,
           uploadDate: new Date(),
           document_url: cloudinaryResponse.secure_url,
-          added_by: user.id,
+          added_by: user,
+          uploadedBy: user.username,
           fileSize: image?.file.size.toString(),
         });
       } else {
@@ -58,6 +60,7 @@ const BookForm = ({ isEdit, data }: { isEdit?: boolean; data?: any }) => {
           title: values.title,
           author: values.author,
           genre: values.genre,
+          uploadedBy: user.username,
           yearPublished: values.yearPublished,
           id: data?.id,
         });
